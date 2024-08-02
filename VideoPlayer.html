@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="icons/css/all.min.css">
+    <link rel="stylesheet" href="icons/font/bootstrap-icons.css">
+    <title>VIDEO PLAYER</title>
+</head>
+<body>
+    <div class="video-player">
+        <div class="video-name"></div>
+        <div class="audio-tracks-error-message" onclick="this.style.display='none'">
+            NOTE: You have not enabled AudioTracks on your chrome. 
+            In Order to Enable it. Go To chrome://flags and then enable "Experimental Web Platform features".
+            And then restart your chrome.
+        </div>
+        <div class="error-message"></div>
+        <video poster="VideoPlayer.jpg" class="video"></video>
+        <div class="player-controls">
+            <div class="cursor-time"><span class="cursor-time-value"></span></div>
+            <div class="video-progress">
+                <div class="video-progress-filled"></div>
+            </div>
+            <div class="inner-player-controls">
+                <button class="previous-button" title="Previous"><i class="fas fa-step-backward"></i></button>
+                <button class="play-button" title="Play"><i class="fas fa-play"></i></button>
+                <button class="next-button" title="Next"><i class="fas fa-step-forward"></i></button>
+                <button class="mute control-button" title="Mute">
+                    <div class="slash"></div>
+                    <i class="fas fa-volume-up"></i>
+                </button>
+
+                <input type="range" class="volume" min="0" max="1" step="0.01" value="1" title="1">
+                <button class="fullscreen control-button" title="Expand">
+                    <i class="fas fa-expand"></i>
+                </button>
+                <button class="more-button control-button" title="More">
+                    <i class="fa fa-ellipsis-v"></i>
+                </button>
+                <div class="more-menu">
+                    <div class="more-menu-item" id="import-videos"><i class="bi bi-file-arrow-up"></i>OPEN VIDEOS</div>
+                    <div class="more-menu-item" id="audio-tracks"><i class="bi bi-music-note-list"></i>AUDIO TRACKS</div>
+                    <div class="more-menu-item" id="playback-speed"><i class="bi bi-speedometer"></i>PLAYBACK SPEED</div>
+                    <div class="more-menu-item" id="pip"><i class="bi bi-pip"></i>PICTURE IN PICTURE VIEW</div>
+                </div>
+                <div class="playback-speed-list">
+                    <div class="playback-speed-item" id="0.25">0.25<i id="0.25"></i></div>
+                    <div class="playback-speed-item" id="0.5">0.5<i id="0.5"></i></div>
+                    <div class="playback-speed-item" id="0.75">0.75<i id="0.75"></i></div>
+                    <div class="playback-speed-item" id="1">Normal<i class="bi bi-check2" id="1"></i></div>
+                    <div class="playback-speed-item" id="1.25">1.25<i id="1.25"></i></div>
+                    <div class="playback-speed-item" id="1.5">1.5<i id="1.5"></i></div>
+                    <div class="playback-speed-item" id="1.75">1.75<i id="1.75"></i></div>
+                    <div class="playback-speed-item" id="2">2<i id="2"></i></div>
+                </div>
+                <div class="audio-tracks-list"></div>
+                <div class="time">
+                    <span class="current">0:00</span> / <span class="duration">0:00</span>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="video.js"></script>
+</body>
+
+</html>
